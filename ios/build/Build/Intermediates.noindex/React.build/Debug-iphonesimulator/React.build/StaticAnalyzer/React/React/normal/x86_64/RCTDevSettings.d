@@ -1,0 +1,22 @@
+dependencies: \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Modules/RCTDevSettings.mm \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/ms/ReactNative/chatApp/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/ms/ReactNative/chatApp/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/ms/ReactNative/chatApp/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h

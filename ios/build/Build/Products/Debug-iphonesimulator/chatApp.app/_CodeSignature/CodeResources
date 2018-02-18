@@ -6,7 +6,48 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		hJpdJ49ZVwwd0CawksjlzzbAtjo=
+		wiVQ1lUkiD6LfsgDZZaoiO7/G7I=
+		</data>
+		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
+		<data>
+		ooz0sIAaLKBGoFU5iKq8DR11NmY=
+		</data>
+		<key>Frameworks/IDEBundleInjection.framework/Info.plist</key>
+		<data>
+		R/knOPjsjrJNiVtUa2S4kYE749M=
+		</data>
+		<key>Frameworks/IDEBundleInjection.framework/_CodeSignature/CodeResources</key>
+		<data>
+		qcVgsOCxIzxwcNXLWXgRrNjnuT8=
+		</data>
+		<key>Frameworks/IDEBundleInjection.framework/version.plist</key>
+		<data>
+		K7jOt4uC+lqy/StneXlQVk21axY=
+		</data>
+		<key>Frameworks/XCTest.framework/Info.plist</key>
+		<data>
+		CYfyvPIGUR84QvCD7SuNDvG6Bxc=
+		</data>
+		<key>Frameworks/XCTest.framework/XCTest</key>
+		<data>
+		M3EBma1BpAxt7iGIjYcrm9BnNOc=
+		</data>
+		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
+		<data>
+		5EUn1qFgVTwSkfSLCubcLwgrx0c=
+		</data>
+		<key>Frameworks/XCTest.framework/en.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TuBj57ZP6zBqcL9HttO2Rucaw9E=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/XCTest.framework/version.plist</key>
+		<data>
+		Etc/8BPenX54rv1uBx24u4bnqTg=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -16,6 +57,26 @@
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
 		</data>
+		<key>PlugIns/chatAppTests.xctest.dSYM/Contents/Info.plist</key>
+		<data>
+		lCi7+Ae3RsWkUo/K4AANhOgFnnM=
+		</data>
+		<key>PlugIns/chatAppTests.xctest.dSYM/Contents/Resources/DWARF/chatAppTests</key>
+		<data>
+		WRtlyYNvC7eqkSUJ7Pnrwi9Va/M=
+		</data>
+		<key>PlugIns/chatAppTests.xctest/Info.plist</key>
+		<data>
+		vNBGjsfUUOygNa7wNm/Fdg6rHwc=
+		</data>
+		<key>PlugIns/chatAppTests.xctest/_CodeSignature/CodeResources</key>
+		<data>
+		ehJFf4Rl8qhRjt0TTT5OqjzctAE=
+		</data>
+		<key>PlugIns/chatAppTests.xctest/chatAppTests</key>
+		<data>
+		lOf4tlRircEQ55fshHLRtXfcAZw=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -23,11 +84,167 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hJpdJ49ZVwwd0CawksjlzzbAtjo=
+			wiVQ1lUkiD6LfsgDZZaoiO7/G7I=
 			</data>
 			<key>hash2</key>
 			<data>
-			l8hfk0BhHKLHagn80mgBuDJBRt0GrjYHxMzCcCXahxQ=
+			xEr8opv/dJknsXk++6ljwLlmHTUGdRmtqLb6I6222fw=
+			</data>
+		</dict>
+		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ooz0sIAaLKBGoFU5iKq8DR11NmY=
+			</data>
+			<key>hash2</key>
+			<data>
+			QTZkTlnemyTcrFMb3v3GdQcfmpRodaOjtevd5TjxiiY=
+			</data>
+		</dict>
+		<key>Frameworks/IDEBundleInjection.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			R/knOPjsjrJNiVtUa2S4kYE749M=
+			</data>
+			<key>hash2</key>
+			<data>
+			wLDjbULmM78l0rN5jh2/yPax234qVZL29OQBQmdYmOU=
+			</data>
+		</dict>
+		<key>Frameworks/IDEBundleInjection.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qcVgsOCxIzxwcNXLWXgRrNjnuT8=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZARlo4LD/z4nYhaCEocjb6nPjuZDCrLsQzn0n4GVr3s=
+			</data>
+		</dict>
+		<key>Frameworks/IDEBundleInjection.framework/version.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			K7jOt4uC+lqy/StneXlQVk21axY=
+			</data>
+			<key>hash2</key>
+			<data>
+			VzM0aDQjkmLy+IyPasdn9DeGkOOTuNMbKUMz+3efAaU=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CYfyvPIGUR84QvCD7SuNDvG6Bxc=
+			</data>
+			<key>hash2</key>
+			<data>
+			Xsgm2dBly62EneiB04ryti89smi53XIXAOtYLFyW4ZE=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/XCTest</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			M3EBma1BpAxt7iGIjYcrm9BnNOc=
+			</data>
+			<key>hash2</key>
+			<data>
+			qAlGOWS6ltLA/WrYd4Rz6EHPivttCiNu41NTW7ulBAI=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5EUn1qFgVTwSkfSLCubcLwgrx0c=
+			</data>
+			<key>hash2</key>
+			<data>
+			55ZdMLgNGz7Q67XNAv/M4f4uXy0R2d5+tlHRhlkL8t4=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/en.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TuBj57ZP6zBqcL9HttO2Rucaw9E=
+			</data>
+			<key>hash2</key>
+			<data>
+			89RGkjZaKuewYnjpzwhIswhqfrU8+pcEXqM/DHVrUmo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/XCTest.framework/version.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Etc/8BPenX54rv1uBx24u4bnqTg=
+			</data>
+			<key>hash2</key>
+			<data>
+			Jh5i9giCFfo5GhN25CjMKdDJ6Kdlz/p4L95RITR+WeA=
+			</data>
+		</dict>
+		<key>PlugIns/chatAppTests.xctest.dSYM/Contents/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lCi7+Ae3RsWkUo/K4AANhOgFnnM=
+			</data>
+			<key>hash2</key>
+			<data>
+			F+DE0lKxxnSw9m2FkL+TFriGnXAKWHOSVuXDfgxra8I=
+			</data>
+		</dict>
+		<key>PlugIns/chatAppTests.xctest.dSYM/Contents/Resources/DWARF/chatAppTests</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WRtlyYNvC7eqkSUJ7Pnrwi9Va/M=
+			</data>
+			<key>hash2</key>
+			<data>
+			78TD55SbEwfxPAIYY/fLD4iyfFIonsf6Wh17bWDm5y0=
+			</data>
+		</dict>
+		<key>PlugIns/chatAppTests.xctest/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vNBGjsfUUOygNa7wNm/Fdg6rHwc=
+			</data>
+			<key>hash2</key>
+			<data>
+			LuKDTxDMWmMTNz3kxe6ohLNUehOY6wUvY41zGG9VSlg=
+			</data>
+		</dict>
+		<key>PlugIns/chatAppTests.xctest/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ehJFf4Rl8qhRjt0TTT5OqjzctAE=
+			</data>
+			<key>hash2</key>
+			<data>
+			k/CzRQyveUu59QxSjUbVg/aE8jHm2YFG0msiWIpvQmY=
+			</data>
+		</dict>
+		<key>PlugIns/chatAppTests.xctest/chatAppTests</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lOf4tlRircEQ55fshHLRtXfcAZw=
+			</data>
+			<key>hash2</key>
+			<data>
+			KDCnugagIbV7HFjZoE95TLAodYkdmL4A2eY+uEBWG2I=
 			</data>
 		</dict>
 	</dict>

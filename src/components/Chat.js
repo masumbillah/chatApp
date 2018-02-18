@@ -6,7 +6,7 @@ class Chat extends React.Component {
         return (
             <View>
                 <Text>
-                    Hello MS on Chat
+                    Hello {this.props.name}
                 </Text>
             </View>
         )

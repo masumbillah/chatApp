@@ -23,6 +23,7 @@ export default class Home extends React.Component {
           placeholder='Enter your name'
           style={styles.textInput}
           onChangeText={(text) => {
+            alert("change", text, this);
             this.setState({
               name: text,
             });
@@ -31,6 +32,9 @@ export default class Home extends React.Component {
         />
         <TouchableOpacity
           onPress={() => {
+              
+            alert("event", this.state.name);
+
             Actions.chat({
               name: this.state.name,
             });
@@ -40,9 +44,9 @@ export default class Home extends React.Component {
             Next
         </Text>
         </TouchableOpacity>
-        <Text style={styles.developerInfo}>
+        {/* <Text style={styles.developerInfo}>
             Developing by Masum Billah
-        </Text>
+        </Text> */}
       </View>
     );
   }

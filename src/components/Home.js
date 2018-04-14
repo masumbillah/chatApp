@@ -1,52 +1,41 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class Home extends React.Component {
-  state = {
-    name: '',
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = { 
+      name: ''
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={[styles.label, {marginTop: 40}]}>
-          Name :
-        </Text>
-        <TextInput
-          placeholder='Enter your name'
-          style={styles.textInput}
-          onChangeText={(text) => {
-            alert("change", text, this);
-            this.setState({
-              name: text,
-            });
-          }}
-          value={this.state.name}
-        />
+        <Text style={[styles.label, {marginTop: 40}]}>  Name : </Text>
+
+         <TextInput style = {styles.input}
+            placeholder='Enter your name'
+            style={styles.textInput}
+            onChangeText={(text) => {
+              this.setState({
+                name: text
+              });
+            }}
+            value={this.state.name}
+          />
+
         <TouchableOpacity
           onPress={() => {
-              
-            alert("event", this.state.name);
-
+            alert("state", this.state.name);
             Actions.chat({
               name: this.state.name,
             });
-          }}
-        >
-        <Text style={styles.button}>
-            Next
-        </Text>
+          }}>
+          <Text style={styles.button}> Next </Text>
         </TouchableOpacity>
-        {/* <Text style={styles.developerInfo}>
-            Developing by Masum Billah
-        </Text> */}
       </View>
     );
   }

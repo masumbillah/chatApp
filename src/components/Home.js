@@ -29,9 +29,8 @@ export default class Home extends React.Component {
 
         <TouchableOpacity
           onPress={() => {
-            console.log("name", this.state.name);
             Actions.chat({
-               name: this.state.name,
+               userName: this.state.name
             });
           }}>
           <Text style={styles.button}> Next </Text>

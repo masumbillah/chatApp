@@ -6,15 +6,15 @@ class List extends Component {
       names: [
          {
             id: 0,
-            name: 'Ben',
+            name: 'Masum',
          },
          {
             id: 1,
-            name: 'Susan',
+            name: 'Billah',
          },
          {
             id: 2,
-            name: 'Robert',
+            name: 'Jhon',
          },
          {
             id: 3,

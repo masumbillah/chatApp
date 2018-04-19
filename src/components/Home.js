@@ -29,9 +29,13 @@ export default class Home extends React.Component {
 
         <TouchableOpacity
           onPress={() => {
-            Actions.chat({
-               userName: this.state.name
-            });
+            //Checked input field and return action
+            if(!this.state.name) alert("Please enter your name");
+            else {
+              Actions.chat({ userName: this.state.name });
+              this.setState({ name: '' });
+            }
+
           }}>
           <Text style={styles.button}> Next </Text>
         </TouchableOpacity>

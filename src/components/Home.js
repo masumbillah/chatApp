@@ -1,48 +1,44 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class Home extends React.Component {
-  state = {
-    name: '',
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = { 
+      name: ''
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={[styles.label, {marginTop: 40}]}>
-          Name :
-        </Text>
-        <TextInput
-          placeholder='Enter your name'
-          style={styles.textInput}
-          onChangeText={(text) => {
-            this.setState({
-              name: text,
-            });
-          }}
-          value={this.state.name}
-        />
+        <Text style={[styles.label, {marginTop: 40}]}>  Name : </Text>
+
+         <TextInput style = {styles.input}
+            placeholder='Enter your name'
+            style={styles.textInput}
+            onChangeText={(text) => {
+              this.setState({
+                name: text
+              });
+            }}
+            value={this.state.name}
+          />
+
         <TouchableOpacity
           onPress={() => {
-            Actions.chat({
-              name: this.state.name,
-            });
-          }}
-        >
-        <Text style={styles.button}>
-            Next
-        </Text>
+            //Checked input field and return action
+            if(!this.state.name) alert("Please enter your name");
+            else {
+              Actions.chat({ userName: this.state.name });
+              this.setState({ name: '' });
+            }
+
+          }}>
+          <Text style={styles.button}> Next </Text>
         </TouchableOpacity>
-        <Text style={styles.developerInfo}>
-            Developing by Masum Billah
-        </Text>
       </View>
     );
   }

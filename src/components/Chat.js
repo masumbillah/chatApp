@@ -2,15 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {View, Text} from 'react-native';
 
+//import { GiftedChat } from 'react-native-gifted-chat'
+
 class Chat extends React.Component {
-
-    constructor(props) {
-        super(props);
-    
-        console.log("this", this.props );
-
-      }
-
     render(){
         return (
             <View>

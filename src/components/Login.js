@@ -7,7 +7,8 @@ export default class Login extends React.Component {
     super(props);
 
     this.state = { 
-      name: ''
+      name: '',
+      password: ''
     };
   }
 
@@ -26,9 +27,9 @@ export default class Login extends React.Component {
           />
             
             <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
                placeholder = "Password"
                autoCapitalize = "none"
+               style={styles.textInput}
                onChangeText={(text) => {
                 this.setState({
                   password: text
@@ -37,18 +38,26 @@ export default class Login extends React.Component {
               value={this.state.password}
             />
                
-            <TouchableOpacity
-                 onPress={() => {
-                  //Checked input field and return action
-                  if(!this.state.name && !this.state.password) alert("Please enter your name or password");
-                  else {
-                    Actions.home({ userName: this.state.name, password: this.state.password });
-                    this.setState({ name: '' });
-                  }
-      
-                }}>
-               <Text style = {styles.submitButtonText}> Login </Text>
-            </TouchableOpacity>
+
+              <TouchableOpacity style = {styles.registrationLink} 
+              onPress={() => {
+                  alert("Go to signup page");
+                  Actions.signUp();
+                }
+              }>
+                <Text> Resgistration </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                  onPress={() => {
+                    //Checked input field and return action
+                    if(!this.state.name && !this.state.password) alert("Please enter your name or password");
+                    else {
+                      Actions.home({ userName: this.state.name, password: this.state.password });
+                      this.setState({ name: '', password: '' });
+                    }      
+                  }}>
+                <Text style = {styles.submitButtonText}> Login </Text>
+              </TouchableOpacity>
          </View>
     );
   }
@@ -62,15 +71,6 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 20,
     marginLeft: 15,
-  },
-  button: {
-    fontSize: 20,
-    marginLeft: 15,
-    color: 'white',
-    padding: 10,
-    backgroundColor: 'blue',
-    width:80,
-    textAlign: 'center'
   },
   textInput: {
     height: 40,
@@ -101,6 +101,14 @@ const styles = StyleSheet.create({
   padding: 10,
   backgroundColor: 'blue',
   width:80,
-  textAlign: 'center'
+  textAlign: 'center',
+  flexDirection: 'row',
+  justifyContent: 'flex-end'
+ },
+ registrationLink: {
+  justifyContent: 'flex-start',
+  borderBottomWidth: 1,
+  flexDirection: 'row',
+  borderBottomColor: '#f4c842'
  }
 });

@@ -52,7 +52,7 @@ export default class Login extends React.Component {
                     //Checked input field and return action
                     if(!this.state.name && !this.state.password) alert("Please enter your name or password");
                     else {
-                      Actions.home({ userName: this.state.name, password: this.state.password });
+                      Actions.wellcome({ userName: this.state.name, password: this.state.password });
                       this.setState({ name: '', password: '' });
                     }      
                   }}>

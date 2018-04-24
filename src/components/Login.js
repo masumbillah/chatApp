@@ -15,8 +15,10 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style = {styles.container}>
+      {/* User name field */}
+      <Text style = {styles.label}> User name: </Text>
        <TextInput style = {styles.input}
-            placeholder='Enter your name'
+            placeholder='Enter user name'
             style={styles.textInput}
             onChangeText={(text) => {
               this.setState({
@@ -25,32 +27,33 @@ export default class Login extends React.Component {
             }}
             value={this.state.name}
           />
-            
-            <TextInput style = {styles.input}
-               placeholder = "Password"
-               autoCapitalize = "none"
-               style={styles.textInput}
-               onChangeText={(text) => {
-                this.setState({
-                  password: text
-                });
-              }}
-              value={this.state.password}
-            />
-               
+          {/* Password field     */}
+          <Text style = {styles.label}> Password: </Text>
+          <TextInput style = {styles.input}
+              placeholder = "Password"
+              autoCapitalize = "none"
+              style={styles.textInput}
+              onChangeText={(text) => {
+              this.setState({
+                password: text
+              });
+            }}
+            value={this.state.password}
+          />
 
+          <View style = {styles.actionButtonsContainer}>
               <TouchableOpacity style = {styles.registrationLink} 
-              onPress={() => {
-                  alert("Go to signup page");
-                  Actions.signUp();
-                }
-              }>
-                <Text> Resgistration </Text>
+                  onPress={() => {
+                      console.log("Go to signup page");
+                      //Actions.signUp();
+                    }
+                  }>
+                <Text style = {{ textAlign: 'left', marginRight: 20}}> Resgistration </Text>
               </TouchableOpacity>
               <TouchableOpacity
                   onPress={() => {
                     //Checked input field and return action
-                    if(!this.state.name && !this.state.password) alert("Please enter your name or password");
+                    if(!this.state.name && !this.state.password) console.log("Please enter your name or password");
                     else {
                       Actions.wellcome({ userName: this.state.name, password: this.state.password });
                       this.setState({ name: '', password: '' });
@@ -58,6 +61,7 @@ export default class Login extends React.Component {
                   }}>
                 <Text style = {styles.submitButtonText}> Login </Text>
               </TouchableOpacity>
+            </View>
          </View>
     );
   }
@@ -65,7 +69,6 @@ export default class Login extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     paddingTop: 23
   },
   label: {
@@ -83,32 +86,21 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
   },
-  developerInfo: {
-    fontSize: 14,
-    marginTop: 30,
-    marginLeft: 15,
-  },
- submitButton: {
-    backgroundColor: '#7a42f4',
+  submitButtonText:{
+    fontSize: 20,
+    color: 'white',
     padding: 10,
-    margin: 15,
-    height: 40,
- },
- submitButtonText:{
-  fontSize: 20,
-  marginLeft: 15,
-  color: 'white',
-  padding: 10,
-  backgroundColor: 'blue',
-  width:80,
-  textAlign: 'center',
-  flexDirection: 'row',
-  justifyContent: 'flex-end'
- },
- registrationLink: {
-  justifyContent: 'flex-start',
-  borderBottomWidth: 1,
-  flexDirection: 'row',
-  borderBottomColor: '#f4c842'
- }
+    backgroundColor: 'blue',
+    width:200,
+    textAlign: 'center'
+  },
+  actionButtonsContainer: {
+    flex: 1, 
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'stretch'
+  },
+  registrationLink:{
+    padding: 10
+  }
 });

@@ -13,9 +13,36 @@ export default class Wellcome extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-         <Text> Thanks {this.props.userName} </Text>
-         <Text> Wellcome to ChattApp </Text>
+      <View>
+        <View style={styles.container}>
+          <Text> Thanks {this.props.userName} </Text>
+          <Text> Wellcome to ChattApp </Text>
+        </View>
+
+        {/* Bottom menus */}
+        <View style={styles.bottomMenusContainer}>          
+              <TouchableOpacity style = {styles.menuItem} 
+                onPress={() => { 
+                  console.log("Profile");
+                }
+                }>
+                 <Text> Profile </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.menuItem} 
+                onPress={() => { 
+                  console.log("Conversations");
+                }
+                }> 
+                <Text> Conversations </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.menuItem} 
+                onPress={() => {
+                   console.log("Settings");
+                  }
+                }>
+                 <Text> Settings </Text>
+              </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -23,35 +50,23 @@ export default class Wellcome extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+    // alignItems: 'center'
   },
-  label: {
-    fontSize: 20,
-    marginLeft: 15,
+  bottomMenusContainer: {
+    flex: 1, 
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'stretch'
   },
-  button: {
-    fontSize: 20,
-    marginLeft: 15,
-    color: 'white',
-    padding: 10,
-    backgroundColor: 'blue',
-    width:80,
-    textAlign: 'center'
-  },
-  textInput: {
+  menuItem: {
     height: 40,
-    marginLeft: 15,
+    // width: 50,
+    padding: 10,
     borderWidth: 1,
-    borderColor: 'black',
-    margin: 20,
-    paddingTop: 5,
-    paddingBottom: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
-  developerInfo: {
-    fontSize: 14,
-    marginTop: 30,
-    marginLeft: 15,
+    borderStyle: 'solid',
+    borderColor: 'black'
   }
 });

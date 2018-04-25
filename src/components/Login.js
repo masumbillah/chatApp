@@ -42,20 +42,20 @@ export default class Login extends React.Component {
           />
 
           <View style = {styles.actionButtonsContainer}>
-              <TouchableOpacity style = {styles.registrationLink} 
+              <TouchableOpacity 
                   onPress={() => {
                       console.log("Go to signup page");
                       //Actions.signUp();
                     }
                   }>
-                <Text style = {{ textAlign: 'left', marginRight: 20}}> Resgistration </Text>
+                <Text style = {styles.registrationLink}> Resgistration </Text>
               </TouchableOpacity>
               <TouchableOpacity
                   onPress={() => {
                     //Checked input field and return action
                     if(!this.state.name && !this.state.password) console.log("Please enter your name or password");
-                    else {
-                      Actions.wellcome({ userName: this.state.name, password: this.state.password });
+                    else if(this.state.name && this.state.password){
+                      Actions.welcome({ userName: this.state.name, password: this.state.password });
                       this.setState({ name: '', password: '' });
                     }      
                   }}>
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   textInput: {
-    height: 40,
+    height: 45,
     marginLeft: 15,
     borderWidth: 1,
     borderColor: 'black',
@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     padding: 10,
-    backgroundColor: 'blue',
-    width:200,
+    backgroundColor: '#2F9AF2',
+    width:190,
     textAlign: 'center'
   },
   actionButtonsContainer: {
@@ -101,6 +101,10 @@ const styles = StyleSheet.create({
     alignItems: 'stretch'
   },
   registrationLink:{
-    padding: 10
+    fontSize: 16,
+    textAlign: 'left', 
+    marginRight: 20,
+    padding: 10,
+    color: '#2F9AF2'
   }
 });

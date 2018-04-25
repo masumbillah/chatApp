@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-export default class Wellcome extends React.Component {
+export default class Welcome extends React.Component {
   constructor(props) {
     super(props);
 
@@ -13,10 +13,10 @@ export default class Wellcome extends React.Component {
 
   render() {
     return (
-      <View>
-        <View style={styles.container}>
-          <Text> Thanks {this.props.userName} </Text>
-          <Text> Wellcome to ChattApp </Text>
+      <View style={styles.container}>
+        <View style={styles.welcomeContainer}>
+          <Text style={styles.greetText}> Thanks <Text style={styles.userName}> {this.props.userName} </Text> </Text>
+          <Text style={styles.welcomeText}> Welcome to ChattApp </Text>
         </View>
 
         {/* Bottom menus */}
@@ -30,9 +30,9 @@ export default class Wellcome extends React.Component {
               </TouchableOpacity>
               <TouchableOpacity style = {styles.menuItem} 
                 onPress={() => { 
-                  console.log("Conversations");
+                  Actions.conversations();
                 }
-                }> 
+              }> 
                 <Text> Conversations </Text>
               </TouchableOpacity>
               <TouchableOpacity style = {styles.menuItem} 
@@ -50,23 +50,37 @@ export default class Wellcome extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // flexDirection: 'column',
-    // justifyContent: 'center',
-    // alignItems: 'center'
+    flex: 1
+  },
+  welcomeContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  greetText: {
+    fontSize: 18
+  },
+  welcomeText: {
+    fontSize: 18
+  },
+  userName: {
+    fontWeight: 'bold'
   },
   bottomMenusContainer: {
-    flex: 1, 
+    flex: 2,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'stretch'
+    alignItems: 'flex-end'
   },
   menuItem: {
-    height: 40,
-    // width: 50,
-    padding: 10,
+    height: 50,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: 'black'
+    borderColor: '#CACACB',
+    justifyContent: 'center'
   }
 });

@@ -15,8 +15,8 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style = {styles.container}>
-      {/* User name field */}
-      <Text style = {styles.label}> User name: </Text>
+      {/* Name field */}
+      <Text style = {styles.label}> Name: </Text>
        <TextInput style = {styles.input}
             placeholder='Enter user name'
             style={styles.textInput}
@@ -27,38 +27,50 @@ export default class Login extends React.Component {
             }}
             value={this.state.name}
           />
-          {/* Password field     */}
-          <Text style = {styles.label}> Password: </Text>
-          <TextInput style = {styles.input}
-              placeholder = "Password"
-              autoCapitalize = "none"
-              style={styles.textInput}
-              onChangeText={(text) => {
-              this.setState({
-                password: text
-              });
-            }}
+          {/* Email field */}
+          <Text style = {styles.label}> Name: </Text>
+           <TextInput style = {styles.input}
+                placeholder='Enter email'
+                style={styles.textInput}
+                onChangeText={(text) => {
+                  this.setState({
+                    email: text
+                  });
+                }}
+                value={this.state.email}
+              />
+              {/* birthDay field */}
+              <Text style = {styles.label}> Birth of Date: </Text>
+              <TextInput style = {styles.input}
+                  placeholder='24/04/2018'
+                  style={styles.textInput}
+                  onChangeText={(text) => {
+                    this.setState({
+                      birthDay: text
+                    });
+                  }}
+                  value={this.state.birthDay}
+                />
+              {/* Password field     */}
+              <Text style = {styles.label}> Password: </Text>
+              <TextInput style = {styles.input}
+                  placeholder = "Password"
+                  autoCapitalize = "none"
+                  style={styles.textInput}
+                  onChangeText={(text) => {
+                  this.setState({
+                    password: text
+                  });
+                }}
             value={this.state.password}
           />
 
           <View style = {styles.actionButtonsContainer}>
-              <TouchableOpacity 
-                  onPress={() => {
-                      Actions.registration();
-                    }
-                  }>
-                <Text style = {styles.registrationLink}> Resgistration </Text>
-              </TouchableOpacity>
               <TouchableOpacity
                   onPress={() => {
-                    //Checked input field and return action
-                    if(!this.state.name && !this.state.password) console.log("Please enter your user name or password");
-                    else if(this.state.name && this.state.password){
-                      Actions.welcome({ userName: this.state.name, password: this.state.password });
-                      this.setState({ name: '', password: '' });
-                    }      
+                        console.log("Registration Data")    
                   }}>
-                <Text style = {styles.submitButtonText}> Login </Text>
+                <Text style = {styles.submitButtonText}> Registration </Text>
               </TouchableOpacity>
             </View>
          </View>

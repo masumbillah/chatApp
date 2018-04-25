@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Login from './components/Login';
+import Registration from './components/Registration';
 import Welcome from './components/Welcome';
 import Home from './components/Home';
 import Chat from './components/Chat';
@@ -18,6 +19,7 @@ class App extends React.Component {
             <Router>
                 <Scene key='root'>
                     <Scene key='login' component={Login} title='Login' />
+                    <Scene key='registration' component={Registration} title='Registration' />
                     <Scene key='welcome' component={Welcome} title='Welcome' />
                     <Scene key='home' component={Home} title='Home' />
                     <Scene key='chat' component={Chat} title='Chat' />

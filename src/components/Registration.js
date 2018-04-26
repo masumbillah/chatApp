@@ -18,7 +18,7 @@ export default class Login extends React.Component {
       {/* Name field */}
       <Text style = {styles.label}> Name: </Text>
        <TextInput style = {styles.input}
-            placeholder='Enter user name'
+            placeholder='Enter name'
             style={styles.textInput}
             onChangeText={(text) => {
               this.setState({
@@ -66,6 +66,13 @@ export default class Login extends React.Component {
           />
 
           <View style = {styles.actionButtonsContainer}>
+          <TouchableOpacity 
+                  onPress={() => {
+                      Actions.login();
+                    }
+                  }>
+                <Text style = {styles.registrationLink}> Have a account? </Text>
+              </TouchableOpacity>
               <TouchableOpacity
                   onPress={() => {
                         console.log("Registration Data")    
@@ -102,7 +109,7 @@ const styles = StyleSheet.create({
     color: 'white',
     padding: 10,
     backgroundColor: '#2F9AF2',
-    width:190,
+    width:168,
     textAlign: 'center'
   },
   actionButtonsContainer: {

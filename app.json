@@ -1,4 +1,5 @@
 {
   "name": "chatApp",
-  "displayName": "chatApp"
+  "displayName": "chatApp",
+  "icon": "logo.png"
 }

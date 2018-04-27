@@ -1,20 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class Welcome extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { 
-      name: ''
-    };
+    // this.state = { 
+    //   name: ''
+    // };
   }
 
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.welcomeContainer}>
+        <Image style={styles.welcomeLogo}
+          source={require('../imgs/brand.png')}
+        />
+        
           <Text style={styles.greetText}> Thanks for login </Text>
           <Text style={styles.welcomeText}> Welcome to ChattApp </Text>
         </View>
@@ -61,9 +65,14 @@ const styles = StyleSheet.create({
     flex: 1
   },
   welcomeContainer: {
-    flex: 1,
+    flex: 3,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  welcomeLogo: {
+    width: 80,
+    height: 80,
+    marginBottom: 20
   },
   greetText: {
     fontSize: 18
@@ -71,11 +80,8 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 18
   },
-  userName: {
-    fontWeight: 'bold'
-  },
   bottomMenusContainer: {
-    flex: 2,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-end'

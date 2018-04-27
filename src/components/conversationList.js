@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class ConversationsList extends Component {
@@ -48,7 +48,9 @@ export default class ConversationsList extends Component {
                      
                     <View style = {styles.conversation}>
                         <View style = {styles.avatarContainer}>
-                            <Text> Avatar </Text>
+                        <Image style={styles.avatar}
+                                source={require('../imgs/male-avatar.png')}
+                            />
                         </View>
                         <View style = {styles.nameAndMessageBox}>
                             <Text style = {styles.listBoldText}> {item.name} </Text>
@@ -113,11 +115,15 @@ const styles = StyleSheet.create ({
     flexDirection: 'row'
    },
    avatarContainer: {
-       flex: 1, 
+       flex: 0.6, 
        flexDirection: 'column',
-       width: 100,
+       width: 80,
        alignItems: 'flex-start',
        marginRight: 15
+   },
+   avatar: {
+       width: 35,
+       height: 35
    },
    nameAndMessageBox: { 
        flex: 2, 

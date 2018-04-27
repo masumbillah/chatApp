@@ -15,7 +15,7 @@ export default class Welcome extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.welcomeContainer}>
-          <Text style={styles.greetText}> Thanks <Text style={styles.userName}> {this.props.userName} </Text> </Text>
+          <Text style={styles.greetText}> Thanks for login </Text>
           <Text style={styles.welcomeText}> Welcome to ChattApp </Text>
         </View>
 
@@ -27,6 +27,14 @@ export default class Welcome extends React.Component {
                 }
                 }>
                  <Text> Profile </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.menuItem} 
+                onPress={() => { 
+                  console.log("Contacts");
+                  Actions.contacts();
+                }
+              }> 
+                <Text> Contacts </Text>
               </TouchableOpacity>
               <TouchableOpacity style = {styles.menuItem} 
                 onPress={() => { 
@@ -74,10 +82,7 @@ const styles = StyleSheet.create({
   },
   menuItem: {
     height: 50,
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingLeft: 15,
-    paddingRight: 15,
+    padding: 12,
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: '#CACACB',

@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-export default class ConversationsList extends Component {
+export default class Contacts extends Component {
    constructor(props) {
     super(props);
     
     this.state = {
-        isConversationPage: true,
+        isContactPage: true,
         conversations: [
            {
               id: 0,
               name: 'Masum',
-              content: "Hello testing1",
+              phone: "01922483273",
            },
            {
               id: 1,
               name: 'Billah',
-              content: "Hello testing2",
+              phone: "01922483273",
            },
            {
               id: 2,
               name: 'Jhon',
-              content: "Hello testing3",
+              phone: "01922483273",
            },
            {
               id: 3,
               name: 'Mary',
-              content: "Hello testing4",
+              phone: "01922483273",
            }
         ]
      }
@@ -42,9 +42,9 @@ export default class ConversationsList extends Component {
          <View style = {styles.container}> 
             {
                this.state.conversations.map((item, index) => (
-                  <TouchableOpacity
+                  <View
                      key = {item.id}  style = {styles.conversationItem}
-                     onPress = {() => this.alertItemName(item)}>
+                    >
                      
                     <View style = {styles.conversation}>
                         <View style = {styles.avatarContainer}>
@@ -52,14 +52,23 @@ export default class ConversationsList extends Component {
                         </View>
                         <View style = {styles.nameAndMessageBox}>
                             <Text style = {styles.listBoldText}> {item.name} </Text>
-                            <Text> {item.content} </Text>
+                            <Text style = {styles.dimText}> {item.phone} </Text>
                         </View>
-                        <View style = {styles.messageTimeBox}>
-                            <Text style = {styles.dimText}>  May 10 </Text>
-                            <Text style = {styles.dimText}> 03:25PM </Text>
+                        <View style = {styles.callBox}>
+                            <Text style = {styles.dimText}> Call </Text>
+                        </View>
+                        <View style = {styles.messageBox}>
+
+                            <TouchableOpacity 
+                                onPress={() => { 
+                                    console.log("contactInfo", item);
+                                    Actions.chat({ contactInfo: item });
+                                }}> 
+                                <Text> Message </Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
-                  </TouchableOpacity>
+                  </View>
                ))
             }
          </View>
@@ -72,18 +81,18 @@ export default class ConversationsList extends Component {
                     }}>
                     <Text> Profile </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style = {styles.menuItem}
-                    onPress={() => {
-                        Actions.contacts();
-                    }}> 
+                <TouchableOpacity style = {[styles.menuItem, this.state.isContactPage ? styles.activeMenu : ""]}> 
                     <Text> Contacts </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style = {[styles.menuItem, this.state.isConversationPage ? styles.activeMenu : ""]}> 
+                <TouchableOpacity style = {styles.menuItem} 
+                    onPress={() => { 
+                    Actions.conversations();
+                    }}> 
                     <Text> Conversations </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style = {styles.menuItem} 
                     onPress={() => {
-                        console.log("Settings", this.state.isConversationPage);
+                    console.log("Settings");
                     }}>
                     <Text> Settings </Text>
                 </TouchableOpacity>
@@ -115,22 +124,25 @@ const styles = StyleSheet.create ({
    avatarContainer: {
        flex: 1, 
        flexDirection: 'column',
-       width: 100,
        alignItems: 'flex-start',
        marginRight: 15
-   },
-   nameAndMessageBox: { 
-       flex: 2, 
-       flexDirection: 'column',
- 
    },
    listBoldText: {
         fontWeight: 'bold'
    },
-   messageTimeBox: {
-       flex: 3,
+   nameAndMessageBox: { 
+       flex: 2, 
+       flexDirection: 'column'
+   },
+   callBox: {
+        marginTop:10,
        flexDirection: 'column',
-       width: 80,
+       alignItems: 'flex-end'
+   },
+   messageBox: {
+       marginTop: 10,
+       marginLeft: 10,
+       flexDirection: 'column',
        alignItems: 'flex-end'
    },
    dimText: {

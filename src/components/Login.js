@@ -7,7 +7,7 @@ export default class Login extends React.Component {
     super(props);
 
     this.state = { 
-      name: '',
+      email: '',
       password: ''
     };
   }
@@ -15,17 +15,17 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style = {styles.container}>
-      {/* User name field */}
-      <Text style = {styles.label}> User name: </Text>
+      {/* Email field */}
+      <Text style = {styles.label}> Email: </Text>
        <TextInput style = {styles.input}
-            placeholder='Enter user name'
+            placeholder='Enter email'
             style={styles.textInput}
             onChangeText={(text) => {
               this.setState({
-                name: text
+                email: text
               });
             }}
-            value={this.state.name}
+            value={this.state.email}
           />
           {/* Password field     */}
           <Text style = {styles.label}> Password: </Text>
@@ -52,10 +52,10 @@ export default class Login extends React.Component {
               <TouchableOpacity
                   onPress={() => {
                     //Checked input field and return action
-                    if(!this.state.name && !this.state.password) console.log("Please enter your user name or password");
-                    else if(this.state.name && this.state.password){
-                      Actions.welcome({ userName: this.state.name, password: this.state.password });
-                      this.setState({ name: '', password: '' });
+                    if(!this.state.email && !this.state.password) console.log("Please enter your email or password");
+                    else if(this.state.email && this.state.password){
+                      Actions.welcome({ email: this.state.email, password: this.state.password });
+                      this.setState({ email: '', password: '' });
                     }      
                   }}>
                 <Text style = {styles.submitButtonText}> Login </Text>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     padding: 10,
-    backgroundColor: '#2F9AF2',
+    backgroundColor: '#0073DA',
     width:190,
     textAlign: 'center'
   },
@@ -104,6 +104,6 @@ const styles = StyleSheet.create({
     textAlign: 'left', 
     marginRight: 20,
     padding: 10,
-    color: '#2F9AF2'
+    color: '#0073DA'
   }
 });

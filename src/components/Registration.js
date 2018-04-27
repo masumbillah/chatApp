@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     padding: 10,
-    backgroundColor: '#2F9AF2',
+    backgroundColor: '#0073DA',
     width:168,
     textAlign: 'center'
   },
@@ -123,6 +123,6 @@ const styles = StyleSheet.create({
     textAlign: 'left', 
     marginRight: 20,
     padding: 10,
-    color: '#2F9AF2'
+    color: '#0073DA'
   }
 });

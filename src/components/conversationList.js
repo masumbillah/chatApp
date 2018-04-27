@@ -13,22 +13,38 @@ export default class ConversationsList extends Component {
               id: 0,
               name: 'Masum',
               content: "Hello testing1",
+              gender: 'male'
            },
            {
               id: 1,
               name: 'Billah',
               content: "Hello testing2",
+              gender: 'male'
            },
            {
               id: 2,
-              name: 'Jhon',
-              content: "Hello testing3",
+              name: 'Shati',
+              content: "Hello testing2",
+              gender: 'female'
            },
            {
               id: 3,
+              name: 'Jhon',
+              content: "Hello testing3",
+              gender: 'male'
+           },
+           {
+              id: 4,
               name: 'Mary',
               content: "Hello testing4",
-           }
+              gender: 'female'
+           },
+           {
+              id: 5,
+              name: 'Yesmin',
+              content: "Hello testing2",
+              gender: 'female'
+           },
         ]
      }
   }
@@ -36,6 +52,13 @@ export default class ConversationsList extends Component {
    alertItemName = (item) => {
       console.log(item)
    }
+
+// Get Default avatar url
+   avatarImg = (item) => {
+       if(item && item.gender === 'male') return require('../imgs/male-avatar.png');
+       else return require('../imgs/female-avatar.png');
+    }
+
    render() {
       return (
         <View style = {styles.mainContainer}>
@@ -48,9 +71,7 @@ export default class ConversationsList extends Component {
                      
                     <View style = {styles.conversation}>
                         <View style = {styles.avatarContainer}>
-                        <Image style={styles.avatar}
-                                source={require('../imgs/male-avatar.png')}
-                            />
+                        <Image style={styles.avatar} source={this.avatarImg(item)}/>
                         </View>
                         <View style = {styles.nameAndMessageBox}>
                             <Text style = {styles.listBoldText}> {item.name} </Text>
@@ -70,7 +91,7 @@ export default class ConversationsList extends Component {
             <View style={styles.bottomMenusContainer}>          
                 <TouchableOpacity style = {styles.menuItem} 
                     onPress={() => { 
-                    console.log("Profile");
+                       Actions.profile();
                     }}>
                     <Text> Profile </Text>
                 </TouchableOpacity>
@@ -135,8 +156,8 @@ const styles = StyleSheet.create ({
    },
    messageTimeBox: {
        flex: 3,
-       flexDirection: 'column',
        width: 80,
+       flexDirection: 'column',
        alignItems: 'flex-end'
    },
    dimText: {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class Login extends React.Component {
@@ -15,6 +15,12 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style = {styles.container}>
+        {/* logo container */}
+        <View style={styles.logoContainer}>
+            <Image style={styles.logo} source={require('../imgs/brand.png')}/>
+            <Text style={styles.logoText}> ChattApp </Text>
+        </View>
+
       {/* Email field */}
       <Text style = {styles.label}> Email: </Text>
        <TextInput style = {styles.input}
@@ -70,6 +76,21 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 23
   },
+  logoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+    marginBottom: 40
+  },
+  logo: {
+    width: 60,
+    height: 60
+  },
+  logoText: {
+    fontSize: 25,
+    marginLeft: 5,
+  },
   label: {
     fontSize: 20,
     marginLeft: 15,
@@ -97,7 +118,8 @@ const styles = StyleSheet.create({
     flex: 1, 
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    marginTop: 10,
   },
   registrationLink:{
     fontSize: 16,

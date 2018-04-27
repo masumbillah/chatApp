@@ -2,47 +2,45 @@ import React from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-export default class Welcome extends React.Component {
+export default class Profile extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = { 
-    //   name: ''
-    // };
+    this.state = { 
+      isProfilePage: true,
+    };
   }
 
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.welcomeContainer}>
-        <Image style={styles.welcomeLogo}
-          source={require('../imgs/brand.png')}
-        />
-          <Text style={styles.greetText}> Thanks for login </Text>
-          <Text style={styles.welcomeText}> Welcome to ChattApp </Text>
+          <Image style={styles.welcomeLogo}
+            source={require('../imgs/male-avatar.png')}
+          />
+        
+          <Text style={styles.greetText}> Mr. Masum Billah </Text>
+              <TouchableOpacity
+                  onPress={() => { Actions.login({isLoginPage: true});
+                }}> 
+                <Text style={[styles.greetText, {marginTop: 15, fontWeight: 'bold'}]}> Logout </Text>
+              </TouchableOpacity>
         </View>
 
         {/* Bottom menus */}
         <View style={styles.bottomMenusContainer}>          
-              <TouchableOpacity style = {styles.menuItem} 
-                onPress={() => { 
-                  Actions.profile();
-                }
-                }>
+              <TouchableOpacity style = {[styles.menuItem, this.state.isProfilePage ? styles.activeMenu : ""]}>
                  <Text> Profile </Text>
               </TouchableOpacity>
               <TouchableOpacity style = {styles.menuItem} 
-                onPress={() => { 
-                  Actions.contacts();
-                }
-              }> 
+                  onPress={() => { Actions.contacts();
+                }}> 
                 <Text> Contacts </Text>
               </TouchableOpacity>
               <TouchableOpacity style = {styles.menuItem} 
                 onPress={() => { 
                   Actions.conversations();
-                }
-              }> 
+                }}> 
                 <Text> Conversations </Text>
               </TouchableOpacity>
               <TouchableOpacity style = {styles.menuItem} 
@@ -83,6 +81,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-end'
+  },
+  activeMenu: {
+    borderTopWidth: 2,
+    borderTopColor: "#0073DA"
   },
   menuItem: {
     height: 50,

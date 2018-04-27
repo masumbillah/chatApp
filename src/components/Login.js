@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class Login extends React.Component {
@@ -7,7 +7,7 @@ export default class Login extends React.Component {
     super(props);
 
     this.state = { 
-      name: '',
+      email: '',
       password: ''
     };
   }
@@ -15,17 +15,23 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style = {styles.container}>
-      {/* User name field */}
-      <Text style = {styles.label}> User name: </Text>
+        {/* logo container */}
+        <View style={styles.logoContainer}>
+            <Image style={styles.logo} source={require('../imgs/brand.png')}/>
+            <Text style={styles.logoText}> ChattApp </Text>
+        </View>
+
+      {/* Email field */}
+      <Text style = {styles.label}> Email: </Text>
        <TextInput style = {styles.input}
-            placeholder='Enter user name'
+            placeholder='Enter email'
             style={styles.textInput}
             onChangeText={(text) => {
               this.setState({
-                name: text
+                email: text
               });
             }}
-            value={this.state.name}
+            value={this.state.email}
           />
           {/* Password field     */}
           <Text style = {styles.label}> Password: </Text>
@@ -44,8 +50,7 @@ export default class Login extends React.Component {
           <View style = {styles.actionButtonsContainer}>
               <TouchableOpacity 
                   onPress={() => {
-                      console.log("Go to signup page");
-                      //Actions.signUp();
+                      Actions.registration();
                     }
                   }>
                 <Text style = {styles.registrationLink}> Resgistration </Text>
@@ -53,10 +58,10 @@ export default class Login extends React.Component {
               <TouchableOpacity
                   onPress={() => {
                     //Checked input field and return action
-                    if(!this.state.name && !this.state.password) console.log("Please enter your name or password");
-                    else if(this.state.name && this.state.password){
-                      Actions.welcome({ userName: this.state.name, password: this.state.password });
-                      this.setState({ name: '', password: '' });
+                    if(!this.state.email && !this.state.password) console.log("Please enter your email or password");
+                    else if(this.state.email && this.state.password){
+                      Actions.welcome({ email: this.state.email, password: this.state.password });
+                      this.setState({ email: '', password: '' });
                     }      
                   }}>
                 <Text style = {styles.submitButtonText}> Login </Text>
@@ -70,6 +75,21 @@ export default class Login extends React.Component {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 23
+  },
+  logoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+    marginBottom: 40
+  },
+  logo: {
+    width: 60,
+    height: 60
+  },
+  logoText: {
+    fontSize: 25,
+    marginLeft: 5,
   },
   label: {
     fontSize: 20,
@@ -90,7 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     padding: 10,
-    backgroundColor: '#2F9AF2',
+    backgroundColor: '#0073DA',
     width:190,
     textAlign: 'center'
   },
@@ -98,13 +118,14 @@ const styles = StyleSheet.create({
     flex: 1, 
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    marginTop: 10,
   },
   registrationLink:{
     fontSize: 16,
     textAlign: 'left', 
     marginRight: 20,
     padding: 10,
-    color: '#2F9AF2'
+    color: '#0073DA'
   }
 });

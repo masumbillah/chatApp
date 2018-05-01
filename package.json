@@ -10,7 +10,6 @@
     "prop-types": "^15.6.1",
     "react": "16.2.0",
     "react-native": "0.53.0",
-    "react-native-gifted-form": "^0.1.1",
     "react-native-router-flux": "^4.0.0-beta.28"
   },
   "devDependencies": {

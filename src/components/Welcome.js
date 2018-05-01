@@ -5,10 +5,8 @@ import { Actions } from 'react-native-router-flux';
 export default class Welcome extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state = { 
-    //   name: ''
-    // };
+    if(this.props.fromPage === 'login') this.state = {welcomeText : 'Thanks for login'};
+    else this.state = {welcomeText : 'Thanks for registration'};
   }
 
   render() {
@@ -18,7 +16,7 @@ export default class Welcome extends React.Component {
         <Image style={styles.welcomeLogo}
           source={require('../imgs/brand.png')}
         />
-          <Text style={styles.greetText}> Thanks for login </Text>
+          <Text style={styles.greetText}> {this.state.welcomeText} </Text>
           <Text style={styles.welcomeText}> Welcome to ChattApp </Text>
         </View>
 

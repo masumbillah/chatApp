@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet} from 'react-native';
 
 import Login from './components/Login';
 import Registration from './components/Registration';
@@ -28,7 +29,7 @@ class App extends React.Component {
                     <Scene key='contacts' component={Contacts} title='Contacts' />
                     <Scene key='profile' component={Profile} title='Profile' />
                     <Scene key='home' component={Home} title='Home' />
-                    <Scene key='chat' component={Chat} title='Chat' />
+                    <Scene key='chat' component={Chat} title='Chat' navigationBarStyle={styles.navigationBar} />
                     <Scene key='conversations' component={conversationList} title='Conversations' />
                 </Scene>
             </Router>
@@ -37,3 +38,10 @@ class App extends React.Component {
 }
 
 export default App;
+
+
+const styles = StyleSheet.create({
+    navigationBar: {
+        // backgroundColor: '#0073DA'
+    }
+});

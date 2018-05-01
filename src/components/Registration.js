@@ -28,7 +28,7 @@ export default class Login extends React.Component {
             value={this.state.name}
           />
           {/* Email field */}
-          <Text style = {styles.label}> Name: </Text>
+          <Text style = {styles.label}> Email: </Text>
            <TextInput style = {styles.input}
                 placeholder='Enter email'
                 style={styles.textInput}
@@ -56,6 +56,7 @@ export default class Login extends React.Component {
               <TextInput style = {styles.input}
                   placeholder = "Password"
                   autoCapitalize = "none"
+                  secureTextEntry={true}
                   style={styles.textInput}
                   onChangeText={(text) => {
                   this.setState({
@@ -92,12 +93,13 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 20,
     marginLeft: 15,
+    color: '#222'
   },
   textInput: {
     height: 45,
     marginLeft: 15,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: '#888',
     margin: 20,
     paddingTop: 5,
     paddingBottom: 5,

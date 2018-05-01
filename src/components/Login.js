@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image, TouchableHighlight } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class Login extends React.Component {
@@ -18,7 +18,7 @@ export default class Login extends React.Component {
         {/* logo container */}
         <View style={styles.logoContainer}>
             <Image style={styles.logo} source={require('../imgs/brand.png')}/>
-            <Text style={styles.logoText}> ChattApp </Text>
+            <Text style={styles.logoText}> ChatApp </Text>
         </View>
 
       {/* Email field */}
@@ -38,6 +38,7 @@ export default class Login extends React.Component {
           <TextInput style = {styles.input}
               placeholder = "Password"
               autoCapitalize = "none"
+              secureTextEntry={true}
               style={styles.textInput}
               onChangeText={(text) => {
               this.setState({
@@ -58,7 +59,7 @@ export default class Login extends React.Component {
               <TouchableOpacity
                   onPress={() => {
                     //Checked input field and return action
-                    if(!this.state.email && !this.state.password) console.log("Please enter your email or password");
+                    if(!this.state.email && !this.state.password) alert("Please enter your email or password!");
                     else if(this.state.email && this.state.password){
                       Actions.welcome({ email: this.state.email, password: this.state.password });
                       this.setState({ email: '', password: '' });
@@ -70,6 +71,7 @@ export default class Login extends React.Component {
          </View>
     );
   }
+
 }
 
 const styles = StyleSheet.create({
@@ -94,12 +96,13 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 20,
     marginLeft: 15,
+    color: '#222'
   },
   textInput: {
     height: 45,
     marginLeft: 15,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: '#888',
     margin: 20,
     paddingTop: 5,
     paddingBottom: 5,

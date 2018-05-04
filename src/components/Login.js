@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View,
+        Image, TouchableHighlight,
+        Platform, KeyboardAvoidingView,
+        ScrollView
+       } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class Login extends React.Component {
@@ -54,6 +58,10 @@ export default class Login extends React.Component {
 
   render() {
     return (
+
+     <ScrollView>
+    <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+
       <View style = {styles.container}>
         {/* logo container */}
         <View style={styles.logoContainer}>
@@ -65,6 +73,7 @@ export default class Login extends React.Component {
       <Text style = {[styles.label]}> Email: </Text>
        <TextInput style = {[styles.textInput, !this.state.isValidEmail ? styles.errorMessage : ""]}
             placeholder='Enter email'
+            underlineColorAndroid="transparent"
             onChangeText={(email) => {
               this.emailValidation(email)
             }}
@@ -77,6 +86,7 @@ export default class Login extends React.Component {
           <TextInput style = {[styles.textInput, !this.state.hasPassword ? styles.errorMessage : ""]}
               placeholder = "Password"
               autoCapitalize = "none"
+              underlineColorAndroid="transparent"
               secureTextEntry={true}
               onChangeText={(password) => {
                 this.passwordValidation(password);
@@ -105,6 +115,8 @@ export default class Login extends React.Component {
               </TouchableOpacity>
             </View>
          </View>
+       </KeyboardAvoidingView>
+     </ScrollView>
     );
   }
 
@@ -139,13 +151,20 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     borderWidth: 1,
     borderColor: '#888',
-    marginTop: 10,
     marginLeft: 15,
     marginRight: 20,
     marginBottom: 5,
-    paddingTop: 5,
+    paddingTop: 10,
     paddingLeft: 10,
     paddingRight: 10,
+    ...Platform.select({
+      ios: {
+        marginTop: 5,
+      },
+      android: {
+        marginTop: 10,
+      }
+    })
   },
   submitButtonText:{
     fontSize: 20,
@@ -156,7 +175,14 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   actionButtonsContainer: {
-    flex: 1, 
+   ...Platform.select({
+      ios: {
+        flex: 1,
+      },
+      android: {
+      // flex: 1,
+      },
+    }),
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'stretch',

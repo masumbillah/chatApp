@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image} from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity,
+         View, Image,
+         ScrollView, KeyboardAvoidingView
+         } from 'react-native';
 
 export default class Chat extends React.Component {
     constructor(props) {
@@ -19,6 +22,7 @@ sendMessageIconUrl = function(){
 
     render(){
         return (
+
             <View style={styles.container}>
                 {/* Message page header option */}
                <View style={styles.messageBoxHeader}> 
@@ -46,10 +50,16 @@ sendMessageIconUrl = function(){
                     <Text style={styles.blankMessage}> We didn't find any message! </Text>
                 </View>
 
+//
+//     <ScrollView>
+//        <KeyboardAvoidingView behavior="padding" enabled>
+//
+
                 {/* Message page footer input form container */}
                <View style={styles.messageTypingBox}> 
                <TextInput style={[styles.sendMessageInput]}
                     placeholder='Type your message..'
+                    underlineColorAndroid="transparent"
                     onChangeText={(message) => {
                         this.setState({message: message});
                     }}
@@ -61,7 +71,10 @@ sendMessageIconUrl = function(){
                             }}> 
                             <Image style={[styles.settingsIcon, styles.sendMessageIcon]} source={this.sendMessageIconUrl()}/>
                         </TouchableOpacity>
-               </View> 
+               </View>
+
+//           </KeyboardAvoidingView>
+//         </ScrollView>
             </View>
         )
     }
